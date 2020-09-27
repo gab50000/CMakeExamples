@@ -12,15 +12,15 @@ add_executable(cmdtest)
 target_link_libraries(cmdtest LINK_PUBLIC ${Boost_LIBRARIES})
 target_sources(cmdtest
  PUBLIC
- ${CMAKE_CURRENT_SOURCE_DIR}/parse_commandline.cpp
- ${CMAKE_CURRENT_SOURCE_DIR}/config.cpp
+ parse_commandline.cpp
+ config.cpp
 )
 add_executable(configtest)
 target_link_libraries(configtest LINK_PUBLIC ${Boost_LIBRARIES})
 target_sources(configtest
  PUBLIC
- ${CMAKE_CURRENT_SOURCE_DIR}/parse_configfile.cpp
- ${CMAKE_CURRENT_SOURCE_DIR}/config.cpp
+ parse_configfile.cpp
+ config.cpp
 )
 
 # CPack
