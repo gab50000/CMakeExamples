@@ -6,8 +6,15 @@ project(
 
 
 find_package(Boost 1.69 COMPONENTS program_options REQUIRED)
-add_executable(conftest ${CMAKE_CURRENT_SOURCE_DIR}/main.cpp)
-target_link_libraries(conftest LINK_PUBLIC ${Boost_LIBRARIES})
+add_executable(cmdtest)
+target_link_libraries(cmdtest LINK_PUBLIC ${Boost_LIBRARIES})
+target_sources(cmdtest
+ PUBLIC
+ ${CMAKE_CURRENT_SOURCE_DIR}/parse_commandline.cpp
+ ${CMAKE_CURRENT_SOURCE_DIR}/config.cpp
+)
+add_executable(configtest ${CMAKE_CURRENT_SOURCE_DIR}/parse_configfile.cpp)
+target_link_libraries(configtest LINK_PUBLIC ${Boost_LIBRARIES})
 
 # CPack
 include(InstallRequiredSystemLibraries)
