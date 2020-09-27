@@ -11,14 +11,14 @@ find_package(Boost 1.69 COMPONENTS program_options REQUIRED)
 add_executable(cmdtest)
 target_link_libraries(cmdtest LINK_PUBLIC ${Boost_LIBRARIES})
 target_sources(cmdtest
- PUBLIC
+ PRIVATE
  parse_commandline.cpp
  config.cpp
 )
 add_executable(configtest)
 target_link_libraries(configtest LINK_PUBLIC ${Boost_LIBRARIES})
 target_sources(configtest
- PUBLIC
+ PRIVATE
  parse_configfile.cpp
  config.cpp
 )
