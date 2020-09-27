@@ -27,4 +27,8 @@ int main(int argc, char* argv[]) {
 
   po::store(po::parse_command_line(argc, argv, config), vm);
   po::notify(vm);
+
+  if (vm.count("help")) {
+    std::cout << config << std::endl;
+  }
 }
